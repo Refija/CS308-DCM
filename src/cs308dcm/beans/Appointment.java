@@ -1,12 +1,26 @@
 package cs308dcm.beans;
 
 import java.sql.Date;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+
+@Entity
+@Table(name="Appointment")
 public class Appointment {
 	private int id;
 	private Date dateOfBirth;
+	@OneToOne
+	@JoinColumn(name = "id", table = "User")
 	private User user;
+	@ManyToOne
+	@JoinColumn(name = "id", table = "Staff")
 	private Staff staff;
+	@ManyToOne
+	@JoinColumn(name = "id", table = "Procedure")
 	private Procedure procedure;
 	
 	

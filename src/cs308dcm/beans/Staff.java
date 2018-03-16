@@ -1,7 +1,14 @@
 package cs308dcm.beans;
 
 import java.sql.Date;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+
+@Entity
+@Table(name="Staff")
 public class Staff {
 	private int id;
 	private String firstName;
@@ -9,9 +16,10 @@ public class Staff {
 	private Date dateOfBirth;
 	private String picture;
 	private String biography;
-	//@ManyToOne
-	//@JoinColumn(name = "id", table = "Position")
+	@ManyToOne
+	@JoinColumn(name = "id", table = "Position")
 	private Position postion;
+	
 	public int getId() {
 		return id;
 	}

@@ -1,8 +1,18 @@
 package cs308dcm.beans;
 
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="Report")
 public class Report {
 	private int id;
 	private String description;
+	@OneToOne
+	@JoinColumn(name = "id", table = "Appointment")
 	private Appointment appointment;
 	
 	

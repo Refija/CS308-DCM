@@ -1,5 +1,10 @@
 package cs308dcm.beans;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+
+@Entity
+@Table(name="Position")
 public class Position {
 	private int id;
 	private String postion;

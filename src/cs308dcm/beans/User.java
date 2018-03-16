@@ -2,7 +2,14 @@ package cs308dcm.beans;
 
 import java.sql.Date;
 
-public class User {
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="User")
+public class User {	
+	
 	private int id;
 	private String firstName;
 	private String lastName;
