@@ -39,29 +39,29 @@ public class FirstController {
 
 	@PostMapping("/save-user")
 	public String registerUser(@ModelAttribute User user, BindingResult bindingResult, HttpServletRequest request) {
-		userService.saveMyUser(user);
+		userService.save(user);
 		request.setAttribute("mode", "MODE_INDEX");
 		return "landing_page";
 	}
 
 	@GetMapping("/show-users")
 	public String showAllUsers(HttpServletRequest request) {
-		request.setAttribute("users", userService.showAllUsers());
+		request.setAttribute("users", userService.getUsers());
 		request.setAttribute("mode", "ALL_USERS");
 		return "landing_page";
 	}
 
 	@RequestMapping("/delete-user")
 	public String deleteUser(@RequestParam int id, HttpServletRequest request) {
-		userService.deleteMyUser(id);
-		request.setAttribute("users", userService.showAllUsers());
+		userService.delete(id);
+		request.setAttribute("users", userService.getUsers());
 		request.setAttribute("mode", "ALL_USERS");
 		return "landing_page";
 	}
 
 	@RequestMapping("/edit-user")
 	public String editUser(@RequestParam int id, HttpServletRequest request) {
-		request.setAttribute("user", userService.editUser(id));
+		request.setAttribute("user", userService.getUserById(id));
 		request.setAttribute("mode", "MODE_UPDATE");
 		return "landing_page";
 	}
@@ -72,7 +72,7 @@ public class FirstController {
 		return "landing_page";
 	}
 
-	@RequestMapping("/login-user")
+	/*@RequestMapping("/login-user")
 	public String loginUser(@ModelAttribute User user, HttpServletRequest request) {
 		if (userService.findByUsernameAndPassword(user.getUsername(), user.getPassword()) != null) {
 			return "landing_page";
@@ -82,5 +82,5 @@ public class FirstController {
 
 		}
 	}
-
+*/
 }

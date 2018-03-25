@@ -1,6 +1,6 @@
 package cs308dcm.models;
 
-import java.sql.Date;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
