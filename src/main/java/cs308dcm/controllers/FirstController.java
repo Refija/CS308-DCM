@@ -3,6 +3,7 @@ package cs308dcm.controllers;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,19 +11,29 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import cs308dcm.services.UserService;
 import cs308dcm.models.User;
 
 @Controller
-public class FirstController {
+public class FirstController implements ErrorController {
 
+	private static final String PATH = "/error";
+	
 	@Autowired
 	private UserService userService;
 
 	@RequestMapping("/home")
+	@ResponseBody
 	public String welcome() {
 		return "Hello World!";
+	}
+	
+	@RequestMapping(value = PATH)
+	@ResponseBody
+	public String error() {
+		return "INVALID MAPPING!";
 	}
 
 	@RequestMapping("/index")
@@ -70,6 +81,12 @@ public class FirstController {
 	public String login(HttpServletRequest request) {
 		request.setAttribute("mode", "MODE_LOGIN");
 		return "landing_page";
+	}
+
+	@Override
+	public String getErrorPath() {
+		// TODO Auto-generated method stub
+		return PATH;
 	}
 
 	/*@RequestMapping("/login-user")

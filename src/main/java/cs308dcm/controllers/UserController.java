@@ -27,6 +27,7 @@ public class UserController {
     /*It displays a form to input data, here "command" is a reserved request attribute
      *which is used to display object data into form
      */
+   
 	@RequestMapping("/userform")
 	public ModelAndView showform(){
 		return new ModelAndView("userform","command",new User());

@@ -4,12 +4,14 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Id;
 
 
 @Entity
 @Table(name="User")
 public class User {	
 	
+	@Id
 	private int id;
 	private String firstName;
 	private String lastName;

@@ -5,11 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
+import javax.persistence.Id;
 
 @Entity
 @Table(name="Staff")
 public class Staff {
+	@Id
 	private int id;
 	private String firstName;
 	private String lastName;
@@ -17,7 +18,7 @@ public class Staff {
 	private String picture;
 	private String biography;
 	@ManyToOne
-	@JoinColumn(name = "id", table = "Position")
+	//@JoinColumn(name = "id", table = "Position")
 	private Position postion;
 	
 	public int getId() {
