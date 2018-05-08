@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">	
 	
 </head>
-<body class="hold-transition sidebar-mini">
+<body>
 <t:menu>
 <h1>
 	Add a Position
@@ -19,46 +19,18 @@
 
 <c:url var="addAction" value="/position/add" ></c:url>
 
-<form:form action="${addAction}" commandName="position">
-<table>
-	<c:if test="${!empty position.position}">
-	<tr>
-		<td>
-			<form:label path="id">
-				<spring:message text="ID"/>
-			</form:label>
-		</td>
-		<td>
-			<form:input path="id" readonly="true" size="8"  disabled="true" />
-			<form:hidden path="id" />
-		</td> 
-	</tr>
-	</c:if>
-	<tr>
-		<td>
-			<form:label path="position">
-				<spring:message text="Position"/>
-			</form:label>
-		</td>
-		<td>
-			<form:input path="position" />
-		</td> 
-	</tr>
-	<tr>
-		<td colspan="2">
-			<c:if test="${!empty position.position}">
-				<input type="submit"
-					value="<spring:message text="Edit Position"/>" />
-			</c:if>
-			<c:if test="${empty position.position}">
-				<input type="submit"
-					value="<spring:message text="Add Position"/>" />
-			</c:if>
-		</td>
-	</tr>
-</table>	
-</form:form>
-<br>
+<form role="form" method="POST" action="${addAction}" >
+				<div class="card-body">
+                  <div class="form-group">
+                    <label for="position">Position</label>
+                    <input type="text" name="position" class="form-control" id="position" placeholder="Enter position">
+                  </div>
+                  <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                  </div>
+                  </form>
+                  <br>
 <h3>Positions List</h3>
 <c:if test="${!empty listPositions}">
 	<table class="tg">

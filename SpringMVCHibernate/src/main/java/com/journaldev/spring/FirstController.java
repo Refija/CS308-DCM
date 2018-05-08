@@ -27,5 +27,9 @@ public class FirstController {
 	public String logon() {
         return "login";
     }
+	@RequestMapping(value= "/about", method = RequestMethod.GET)
+	public String about() {
+        return "about";
+    }
 	
 }

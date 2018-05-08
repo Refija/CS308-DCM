@@ -20,7 +20,7 @@
 
 <c:url var="addAction" value="/user/add" ></c:url>
 
-			<form role="form">
+			<form role="form" method="POST" action="${addAction}" >
 				<div class="card-body">
                   <div class="form-group">
                     <label for="firstName">First Name</label>
@@ -50,7 +50,7 @@
                     <label for="password">Password</label>
                     <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
                   </div>
-				<div class="card-footer">
+					<div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 </div>
