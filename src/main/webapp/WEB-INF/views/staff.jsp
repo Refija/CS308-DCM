@@ -14,7 +14,7 @@
 		</section>
 
 <c:url var="addAction" value="/staff/add" ></c:url>
-
+<div class="card-body">
 <form:form action="${addAction}" commandName="staff">
 <div class="card">
 <form:hidden path="id" />
@@ -79,7 +79,7 @@
 	<tr>
 		<td colspan="2">
 			<c:if test="${!empty staff.firstName}">
-				<input type="submit"
+				<input type="submit"  class="btn btn-primary"
 					value="<spring:message text="Edit Staff"/>" />
 			</c:if>
 			<c:if test="${empty staff.firstName}">
@@ -91,6 +91,7 @@
 </table>
 </div>	
 </form:form>
+</div>
 <br>
 <div class="container">
 		<section class="content-header">

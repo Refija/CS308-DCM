@@ -13,27 +13,19 @@
     		</a>
     		<ul class="navbar-nav">
 		      	<li class="nav-item d-none d-sm-inline-block">
-		        	<a href='/DCM/' class="nav-link">Home</a>
+		        	<a href='/DCM/home' class="nav-link">Home</a>
 		      	</li>
-		      	<li class="nav-item d-none d-sm-inline-block">
-		        	<a href='/DCM/users' class="nav-link">Users</a>
-		      	</li>
-		      	<li class="nav-item d-none d-sm-inline-block">
-		        	<a href='/DCM/positions' class="nav-link">Positions</a>
-		      	</li>
-		      	<li class="nav-item d-none d-sm-inline-block">
-		        	<a href='/DCM/staff' class="nav-link">Staff</a>
-		      	</li>
-		      	<li class="nav-item d-none d-sm-inline-block">
-		        	<a href='/DCM/operations' class="nav-link">Operations</a>
-		      	</li>
-		      	<li class="nav-item d-none d-sm-inline-block">
-		        	<a href='/DCM/appointments' class="nav-link">Appointments</a>
-		      	</li>
-		      	<li class="nav-item d-none d-sm-inline-block">
-		        	<a href='/DCM/reports' class="nav-link">Reports</a>
-		      	</li>
+		      	
       		</ul>
+      		<ul class="navbar-nav ml-auto">
+      
+				<li class="nav-item d-none d-sm-inline-block">
+					<a href='/DCM/user/appointments?history=true' class="nav-link">View appointment history</a>
+				</li>
+	      		<li class="nav-item d-none d-sm-inline-block">
+					<a href="/DCM/user/appointment/create" class="nav-link">Make an appointment</a>
+	      		</li>
+	      	</ul>
       	</nav>
    							
 	

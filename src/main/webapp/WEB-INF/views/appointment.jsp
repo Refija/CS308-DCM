@@ -25,7 +25,7 @@
 			</form:label>
 		</td>
 		<td>
-			<form:input class="form-control" path="date" />
+			<form:input type="date" class="form-control" path="date" />
 		</td> 
 	</tr>
 	<tr>
@@ -127,5 +127,6 @@
 	</c:forEach>
 	</table>
 	</div>
+</div>
 </div>
 </t:menu>

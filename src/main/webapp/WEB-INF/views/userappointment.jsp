@@ -4,7 +4,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page session="false" %>
-<t:menu>
+<t:user>
 	<div class="container">
 		<section class="content-header">
 			<h1>Your appointments</h1>
@@ -44,4 +44,4 @@
 			</div>
 		</div>
 	</div>
-</t:menu>
+</t:user>

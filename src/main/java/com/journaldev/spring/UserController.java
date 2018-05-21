@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.journaldev.spring.model.Appointment;
 import com.journaldev.spring.model.User;
 import com.journaldev.spring.service.UserService;
 
@@ -64,6 +65,12 @@ public class UserController {
         model.addAttribute("user", this.userService.getUserById(id));
         model.addAttribute("listUsers", this.userService.listUsers());
         return "user";
+    }
+    @RequestMapping(value= "/user/register", method = RequestMethod.GET)
+	public String registerUser(Model model) {
+    	model.addAttribute("user", new User());
+    	model.addAttribute("listUsers", this.userService.listUsers());
+        return "register";
     }
     
     @InitBinder

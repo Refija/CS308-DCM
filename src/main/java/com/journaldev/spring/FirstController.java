@@ -44,4 +44,10 @@ public class FirstController {
         return "about";
     }
 	
+	@RequestMapping(value= "/home", method = RequestMethod.GET)
+	public String welcome() {
+        return "welcome";
+    }
+	
+	
 }

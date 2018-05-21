@@ -10,7 +10,7 @@
 <div class="container">
 	<section class="content-header">
 		<h1>
-			Add a User
+			Register
 		</h1>
 	</section>
 	
@@ -110,7 +110,7 @@
 			</c:if>
 			<c:if test="${empty user.firstName}">
 				<input type="submit" class="btn btn-primary"
-					value="<spring:message text="Add User"/>" />
+					value="<spring:message text="Register"/>" />
 			</c:if>
 		</td>
 	</tr>
@@ -118,43 +118,7 @@
 </div>	
 </form:form>
 </div>
-<br><div class="container">
-		<section class="content-header">
-			<h3>User List</h3>
-		</section>
-		<div class="card p-5">
-			<table class="table table-bordered table-hover mb-0">
-				<thead>
-	<tr>
-		<th>User Name</th>
-		<th>User Country</th>
-		<th>User Email</th>
-		<th>User Date of Birth</th>
-		<th>User Address</th>
-		<th>User Username</th>
-		<th>User Role</th>
-		<th>User Password</th>
-		<th>Edit</th>
-		<th>Delete</th>
-	</tr>
-	</thead>
-	<c:forEach items="${listUsers}" var="user">
-		<tr>
-			<td>${user.firstName}</td>
-			<td>${user.lastName}</td>
-			<td>${user.email}</td>
-			<td><fmt:formatDate pattern="dd.MM.yyyy" value="${user.dateOfBirth}"/></td>
-			<td>${user.address}</td>
-			<td>${user.username}</td>
-			<td>${user.role}</td>
-			<td>${user.password}</td>
-			<td><a class="btn btn-primary" href="<c:url value='/user/edit/${user.id}' />" >Edit</a></td>
-			<td><a class="btn btn-primary" href="<c:url value='/user/remove/${user.id}' />" >Delete</a></td>
-		</tr>
-	</c:forEach>
-	</table>
-	</div>
-	</div>
+<br>
 	</div>
 	</t:menu>
 

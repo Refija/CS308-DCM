@@ -3,7 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ page session="false" %>
-<t:menu>
+<t:user>
 <div class="container">
 		<section class="content-header">
 			<h1>
@@ -37,7 +37,7 @@
 			</form:label>
 		</td>
 		<td>
-			<form:input path="date" />
+			<form:input type="date" class="form-control" path="date" />
 		</td> 
 	</tr>
 	<tr>
@@ -47,7 +47,7 @@
 			</form:label>
 		</td>
 		<td>
-			<form:input path="time" />
+			<form:input class="form-control" path="time" />
 		</td> 
 	</tr>
 	<tr>
@@ -57,7 +57,7 @@
 			</form:label>
 		</td>
 		<td>
-			<form:select  path="staff.id">
+			<form:select class="form-control" path="staff.id">
 				<c:forEach items="${listStaff}" var="staff">
 			    <form:option value="${staff.id}">${staff.firstName} ${staff.lastName}</form:option>
 			    </c:forEach>
@@ -71,7 +71,7 @@
 			</form:label>
 		</td>
 		<td>
-			<form:select  path="operation.id">
+			<form:select class="form-control" path="operation.id">
 				<c:forEach items="${listOperations}" var="operation">
 			    <form:option value="${operation.id}">${operation.operation} (${operation.price}KM)</form:option>
 			    </c:forEach>
@@ -81,11 +81,11 @@
 	<tr>
 		<td colspan="2">
 			<c:if test="${!empty appointment.date}">
-				<input type="submit"
+				<input type="submit" class="btn btn-primary"
 					value="<spring:message text="Edit Appointment"/>" />
 			</c:if>
 			<c:if test="${empty appointment.date}">
-				<input type="submit"
+				<input type="submit" class="btn btn-primary"
 					value="<spring:message text="Add Appointment"/>" />
 			</c:if>
 		</td>
@@ -94,4 +94,4 @@
 </div>	
 </form:form>
 </div>
-</t:menu>
+</t:user>

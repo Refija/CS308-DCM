@@ -45,7 +45,7 @@
   <nav class=" navbar navbar-expand bg-dark navbar-dark ">
     <!-- Left navbar links -->
     
-    <a href="/DCM/" class="brand-link">
+    <a href="/DCM/home" class="brand-link">
       <img src="${pageContext.request.contextPath}/resources/img/logoHome.jpg"
            alt="Dental Clinic Logo"
            class="brand-image img-circle elevation-3"
@@ -54,22 +54,21 @@
     </a>
     <ul class="navbar-nav">
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/DCM/" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
         <a href="/DCM/about" class="nav-link">About us</a>
       </li>
-    </ul>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+		<li class="nav-item d-none d-sm-inline-block">
+			<a href='/DCM/user/appointments?history=true' class="nav-link">View appointment history</a>
+		</li>
+      <li class="nav-item d-none d-sm-inline-block">
+		<a href="/DCM/user/appointment/create" class="nav-link">Make an appointment</a>
+      </li>
+      </ul>
+      
+      
 
-    
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="/DCM/login" class="nav-link">Login</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="/DCM/user/register" class="nav-link">Register</a>
-      </li>
-        </ul>
             
   </nav>
      <div class="">
