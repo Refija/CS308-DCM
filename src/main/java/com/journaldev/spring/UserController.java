@@ -42,6 +42,7 @@ public class UserController {
 	public String addUser(@ModelAttribute("user") User u){
 		
 		if(u.getId() == 0){
+			u.setRole("ROLE_USER");
 			//new user, add it
 			this.userService.addUser(u);
 		}else{
@@ -49,7 +50,7 @@ public class UserController {
 			this.userService.updateUser(u);
 		}
 		
-		return "redirect:/users";
+		return "redirect:/login";
 		
 	}
 	

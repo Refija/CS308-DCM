@@ -27,6 +27,16 @@
 		</td> 
 	</tr>
 	<tr>
+		<td>
+			<form:label path="price">
+				<spring:message text="Price"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input type="number" min="0" class="form-control" path="price" />
+		</td> 
+	</tr>
+	<tr>
 		<td colspan="2">
 			<c:if test="${!empty operation.operation}">
 				<input type="submit" class="btn btn-primary"
@@ -51,15 +61,17 @@
 			<table class="table table-bordered table-hover mb-0">
 			<thead>
 	<tr>
-		<th>Operation Operation</th>
+		<th>Procedure</th>
+		<th>Price</th>
 		<th>Edit</th>
 		<th>Delete</th>
 	</tr>
 	<c:forEach items="${listOperations}" var="operation">
 		<tr>
 			<td>${operation.operation}</td>
-			<td><a href="<c:url value='/operation/edit/${operation.id}' />" >Edit</a></td>
-			<td><a href="<c:url value='/operation/remove/${operation.id}' />" >Delete</a></td>
+			<td>${operation.price}</td>
+			<td><a class="btn btn-primary" href="<c:url value='/operation/edit/${operation.id}' />" >Edit</a></td>
+			<td><a class="btn btn-primary" href="<c:url value='/operation/remove/${operation.id}' />" >Delete</a></td>
 		</tr>
 	</c:forEach>
 	</table>

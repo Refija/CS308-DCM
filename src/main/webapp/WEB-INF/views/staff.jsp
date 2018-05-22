@@ -116,8 +116,8 @@
 						<td><fmt:formatDate pattern="dd.MM.yyyy" value="${staff.dateOfBirth}"/></td>
 						<td>${staff.biography}</td>
 						<td>${staff.position.position}</td>
-						<td><a href="<c:url value='/staff/edit/${staff.id}' />" >Edit</a></td>
-						<td><a href="<c:url value='/staff/remove/${staff.id}' />" >Delete</a></td>
+						<td><a class="btn btn-primary" href="<c:url value='/staff/edit/${staff.id}' />" >Edit</a></td>
+						<td><a class="btn btn-primary" href="<c:url value='/staff/remove/${staff.id}' />" >Delete</a></td>
 					</tr>
 		</c:forEach>
 		</table>

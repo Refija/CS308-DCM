@@ -74,16 +74,6 @@
 	</tr>
 	<tr>
 		<td>
-			<form:label path="role">
-				<spring:message text="Role"/>
-			</form:label>
-		</td>
-		<td>
-			<form:input class="form-control" path="role" />
-		</td> 
-	</tr>
-	<tr>
-		<td>
 			<form:label path="username">
 				<spring:message text="Username"/>
 			</form:label>
@@ -132,8 +122,6 @@
 		<th>User Date of Birth</th>
 		<th>User Address</th>
 		<th>User Username</th>
-		<th>User Role</th>
-		<th>User Password</th>
 		<th>Edit</th>
 		<th>Delete</th>
 	</tr>
@@ -146,8 +134,6 @@
 			<td><fmt:formatDate pattern="dd.MM.yyyy" value="${user.dateOfBirth}"/></td>
 			<td>${user.address}</td>
 			<td>${user.username}</td>
-			<td>${user.role}</td>
-			<td>${user.password}</td>
 			<td><a class="btn btn-primary" href="<c:url value='/user/edit/${user.id}' />" >Edit</a></td>
 			<td><a class="btn btn-primary" href="<c:url value='/user/remove/${user.id}' />" >Delete</a></td>
 		</tr>

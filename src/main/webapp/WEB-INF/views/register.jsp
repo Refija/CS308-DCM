@@ -74,16 +74,6 @@
 	</tr>
 	<tr>
 		<td>
-			<form:label path="role">
-				<spring:message text="Role"/>
-			</form:label>
-		</td>
-		<td>
-			<form:input class="form-control" path="role" />
-		</td> 
-	</tr>
-	<tr>
-		<td>
 			<form:label path="username">
 				<spring:message text="Username"/>
 			</form:label>

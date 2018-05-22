@@ -29,6 +29,18 @@
 			<form:input class="form-control" path="position" />
 		</td> 
 	</tr>
+	<tr>
+		<td colspan="2">
+			<c:if test="${!empty report.description}">
+				<input class="bth btn-primary" type="submit"
+					value="<spring:message text="Edit Position"/>" />
+			</c:if>
+			<c:if test="${empty report.description}">
+				<input class="btn btn-primary" type="submit"
+					value="<spring:message text="Add Position"/>" />
+			</c:if>
+		</td>
+	</tr>
 </table>
 </div>	
 </form:form>
@@ -42,7 +54,6 @@
 			<table class="table table-bordered table-hover mb-0">
 			<thead>
 		<tr>
-			<th>ID</th>
 			<th>Position</th>
 			<th>Edit</th>
 			<th>Delete</th>
@@ -50,10 +61,9 @@
 		</thead>
 	<c:forEach items="${listPositions}" var="position">
 		<tr>
-			<td>${position.id}</td>
 			<td>${position.position}</td>
-			<td><a href="<c:url value='/position/edit/${position.id}' />" >Edit</a></td>
-			<td><a href="<c:url value='/position/remove/${position.id}' />" >Delete</a></td>
+			<td><a class="btn btn-primary" href="<c:url value='/position/edit/${position.id}' />" >Edit</a></td>
+			<td><a class="btn btn-primary" href="<c:url value='/position/remove/${position.id}' />" >Delete</a></td>
 		</tr>
 	</c:forEach>
 	</table>
