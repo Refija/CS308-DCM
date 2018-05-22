@@ -1,5 +1,7 @@
 <%@tag description="User Page template" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <t:simpletemplate>
     <jsp:attribute name="header">
     	
@@ -33,6 +35,20 @@
 		      	<li class="nav-item d-none d-sm-inline-block">
 		        	<a href='/DCM/reports' class="nav-link">Reports</a>
 		      	</li>
+		      	
+				<li class="nav-item d-none d-sm-inline-block">
+				<c:url value="/logout" var="logoutUrl" />
+				<form action="${logoutUrl}" method="post" id="logoutForm" style="display:none;">
+					<input type="hidden" name="${_csrf.parameterName}"
+						value="${_csrf.token}" />
+				</form>
+				<script>
+					function formSubmit() {
+						document.getElementById("logoutForm").submit();
+					}
+				</script>
+					<a href="javascript:formSubmit()" class="nav-link">Logout</a>
+				</li>
       		</ul>
       	</nav>
    							

@@ -2,7 +2,8 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<%@ page session="false" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@page session="true"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,13 +59,52 @@
       </li>
       </ul>
       <ul class="navbar-nav ml-auto">
-      
-		<li class="nav-item d-none d-sm-inline-block">
-			<a href='/DCM/user/appointments?history=true' class="nav-link">View appointment history</a>
-		</li>
-      <li class="nav-item d-none d-sm-inline-block">
-		<a href="/DCM/user/appointment/create" class="nav-link">Make an appointment</a>
-      </li>
+      	
+	      <security:authorize access="hasRole('ADMIN')">
+			<!-- For login user -->
+			<c:url value="/logout" var="logoutUrl" />
+			<form action="${logoutUrl}" method="post" id="logoutForm">
+				<input type="hidden" name="${_csrf.parameterName}"
+					value="${_csrf.token}" />
+			</form>
+			<script>
+				function formSubmit() {
+					document.getElementById("logoutForm").submit();
+				}
+			</script>
+			
+			<li class="nav-item d-none d-sm-inline-block">
+				<a href='/DCM/users' class="nav-link">Admin</a>
+			</li>
+			<li class="nav-item d-none d-sm-inline-block">
+				<a href="javascript:formSubmit()" class="nav-link">Logout</a>
+			</li>
+	
+		</security:authorize>
+		
+		
+	    <security:authorize access="hasRole('USER')">
+	    <c:url value="/logout" var="logoutUrl" />
+			<form action="${logoutUrl}" method="post" id="logoutForm">
+				<input type="hidden" name="${_csrf.parameterName}"
+					value="${_csrf.token}" />
+			</form>
+			<script>
+				function formSubmit() {
+					document.getElementById("logoutForm").submit();
+				}
+			</script>
+			<li class="nav-item d-none d-sm-inline-block">
+				<a href='/DCM/user/appointments?history=true' class="nav-link">View appointment history</a>
+			</li>
+	      	<li class="nav-item d-none d-sm-inline-block">
+				<a href="/DCM/user/appointment/create" class="nav-link">Make an appointment</a>
+	      	</li>
+	      	
+			<li class="nav-item d-none d-sm-inline-block">
+				<a href="javascript:formSubmit()" class="nav-link">Logout</a>
+			</li>
+		</security:authorize>
       </ul>
       
       
@@ -77,8 +117,8 @@
       <img alt="" src="${pageContext.request.contextPath}/resources/img/main.jpg" class="img-fluid">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Welcome to Dental Clinic Management</h1>
+          <div class="col">
+            <h1 class="text-center">Welcome to Dental Clinic Management</h1>
           </div>
         </div>
       </div>

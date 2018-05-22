@@ -65,10 +65,14 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User getUserByUsername(String username) {
-		Session session = this.sessionFactory.getCurrentSession();	
-		User u = (User) session.createQuery("from User where username = " + username).list().get(0);
-		logger.info("User loaded successfully, User details="+u);
-		return u;
+	public User getUserByUsername(String userName) {
+		Session session = this.sessionFactory.getCurrentSession();
+		List<User> user = session.createQuery("from User where username = '" + userName + "'").list();
+		
+		if (user.size() == 1) {
+			return user.get(0);
+		}
+		//logger.info("User loaded successfully, User details="+u);
+		return new User();
 	}
 }

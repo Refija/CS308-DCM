@@ -9,7 +9,7 @@
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
 		<java-version>1.6</java-version>
-		<org.springframework-version>4.0.3.RELEASE</org.springframework-version>
+		<org.springframework-version>4.3.4.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.7.4</org.aspectj-version>
 		<org.slf4j-version>1.7.5</org.slf4j-version>
 		<hibernate.version>4.3.5.Final</hibernate.version>
@@ -59,18 +59,23 @@
 		<dependency>
 		    <groupId>org.springframework.security</groupId>
 		    <artifactId>spring-security-core</artifactId>
-		    <version>4.0.3.RELEASE</version>
+		    <version>4.2.0.RELEASE</version>
 		</dependency>
 		<dependency>
 		    <groupId>org.springframework.security</groupId>
 		    <artifactId>spring-security-web</artifactId>
-		    <version>4.0.3.RELEASE</version>
+		    <version>4.2.0.RELEASE</version>
 		</dependency>
   		<dependency>
 		    <groupId>org.springframework.security</groupId>
 		    <artifactId>spring-security-config</artifactId>
-		    <version>4.0.3.RELEASE</version>
+		    <version>4.2.0.RELEASE</version>
   		</dependency>
+  		<dependency>
+    		<groupId>org.springframework.security</groupId>
+    		<artifactId>spring-security-taglibs</artifactId>
+		    <version>4.2.0.RELEASE</version>
+		</dependency>
 		<!-- Apache Commons DBCP -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
@@ -208,4 +213,14 @@
         </plugins>
         <finalName>${project.artifactId}</finalName>
     </build>
+    
+	<repositories>
+	  <!-- ... possibly other repository elements ... -->
+	  <repository>
+	    <id>spring-milestone</id>
+	    <name>Spring Milestone Repository</name>
+	    <url>https://repo.spring.io/milestone</url>
+	  </repository>
+	</repositories>
+    
 </project>

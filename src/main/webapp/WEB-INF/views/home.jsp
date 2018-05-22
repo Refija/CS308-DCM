@@ -2,7 +2,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<%@ page session="false" %>
+<%@ page session="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,8 +78,8 @@
       <img alt="" src="${pageContext.request.contextPath}/resources/img/main.jpg" class="img-fluid">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Welcome to Dental Clinic Management</h1>
+          <div class="col">
+            <h1 class="text-center">Welcome to Dental Clinic Management</h1>
           </div>
         </div>
       </div>

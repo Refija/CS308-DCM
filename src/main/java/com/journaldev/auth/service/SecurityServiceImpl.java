@@ -16,10 +16,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class SecurityServiceImpl implements SecurityService{
 		
-    //@Autowired
+    @Autowired
     private AuthenticationManager authenticationManager;
 
-    //@Autowired
+    @Autowired
     private UserDetailsService userDetailsService;
 
     private static final Logger logger = LoggerFactory.getLogger(SecurityServiceImpl.class);
@@ -35,7 +35,7 @@ public class SecurityServiceImpl implements SecurityService{
     }
 
     @Override
-    public void autologin(String username, String password) {
+    public void autologin(String username, String password) {    	
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());
 

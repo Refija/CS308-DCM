@@ -3,14 +3,15 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ page session="false" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@page session="true"%>
 
 <t:menu>
 
 <div class="container">
 	<section class="content-header">
 		<h1>
-			Add a User
+			Add a User		
 		</h1>
 	</section>
 	

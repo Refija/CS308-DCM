@@ -1,6 +1,7 @@
 package com.journaldev.spring;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.journaldev.spring.model.Appointment;
+import org.springframework.security.core.Authentication;
+
 import com.journaldev.spring.model.User;
 import com.journaldev.spring.service.UserService;
 
@@ -31,7 +34,13 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
-	public String listUsers(Model model) {
+	public String listUsers(Model model, Authentication authentication) {
+		//authentication.getAuthorities();
+		/*System.out.println(Arrays.toString(authentication.getAuthorities().toArray()));
+		System.out.println(authentication.getAuthorities().toArray()[0]);
+		if (authentication.getAuthorities().toArray()[0].toString().compareTo("admin") != 0) {
+			throw
+		}*/
 		model.addAttribute("user", new User());
 		model.addAttribute("listUsers", this.userService.listUsers());
 		return "user";
